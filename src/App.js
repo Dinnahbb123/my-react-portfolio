@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import Header from './components/Header.js';
 import InspectionForm from './components/InspectionForm.js';
+import PatrolForm from './components/PatrolForm.js';
 import './App.css';
 
 
@@ -10,9 +11,12 @@ function App() {
 return ( 
 
   <>
+<div className="app-background">
+    <Header />
 
-  <Header />
-  <InspectionForm />
+    {/* <InspectionForm />  */}
+    <PatrolForm />
+</div>
 
   </>
         
