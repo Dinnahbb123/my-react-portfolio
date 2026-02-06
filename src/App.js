@@ -1,51 +1,59 @@
 //import logo from './logo.svg';
-import Header from './components/Header.js';
+import {useState} from "react";
 import InspectionForm from './components/InspectionForm.js';
 import PatrolForm from './components/PatrolForm.js';
+import { useNavigate, Routes, Route } from "react-router-dom";
 import './App.css';
+import DailyActivity from "./components/DailyActivity.js";
 
 
 
 function App() {
 
+  const navigate = useNavigate();
+
+  // const [currentForm, setCurrentForm] = useState(null);
+
+  
+
+
 return ( 
 
-  <>
-<div className="app-background">
-    <Header />
+  
+    <div className="app-background">
+      <h1 className="App-header">PostGaurd Security Solutions</h1>
+    <button onClick={() =>
+      navigate('/patrol')}>Patrol Form</button>
+    <button onClick={() =>
+      navigate('/inspection')}>Inspection Form</button>
 
-    {/* <InspectionForm />  */}
-    <PatrolForm />
+    <button onClick={() =>
+      navigate('dailyactivityreport')}>Daily Activity Report</button>
+
+      <Routes>
+
+        <Route path= "/patrol" element={<PatrolForm />} />
+          
+        <Route path= "/inspection" element={<InspectionForm />} />
+
+        <Route path="/dailyactivityreport" element={<DailyActivity />} />
+
+      </Routes>
+
+
+
+  {/* {currentForm === "patrol" && <PatrolForm />}
+  {currentForm === "inspection" && <InspectionForm />}
+     */}
+
+
 </div>
-
-  </>
-        
+      
 
 )
-
-
 }
 
 export default App;
 
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
-
-
+  
 
