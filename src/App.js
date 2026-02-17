@@ -1,5 +1,4 @@
 //import logo from './logo.svg';
-import {useState} from "react";
 import InspectionForm from './components/InspectionForm.js';
 import PatrolForm from './components/PatrolForm.js';
 import { useNavigate, Routes, Route } from "react-router-dom";
@@ -21,14 +20,14 @@ return (
 
   
     <div className="app-background">
-      <h1 className="App-header">PostGaurd Security Solutions</h1>
+      <h1 className="App-header">PostGuard Security Solutions</h1>
     <button onClick={() =>
       navigate('/patrol')}>Patrol Form</button>
     <button onClick={() =>
       navigate('/inspection')}>Inspection Form</button>
 
     <button onClick={() =>
-      navigate('dailyactivityreport')}>Daily Activity Report</button>
+      navigate('/dailyactivityreport')}>Daily Activity Report</button>
 
       <Routes>
 
@@ -41,10 +40,6 @@ return (
       </Routes>
 
 
-
-  {/* {currentForm === "patrol" && <PatrolForm />}
-  {currentForm === "inspection" && <InspectionForm />}
-     */}
 
 
 </div>

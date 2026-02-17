@@ -13,11 +13,23 @@ const handleSubmit = e => {
 
 }
 
+const handleChange = (e) => {
+    setForm(e.target.value)
+}
+
 return(
-    <div>
-        <h1>Daily Activity Report</h1>
-            <form onSubmit={handleSubmit}></form>
-    </div>
+    <form onSubmit={handleSubmit}>
+        <label>Daily Activity Report
+            <textarea
+                value={form}
+                onChange={handleChange}
+            />
+        </label>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
 )
 
 }

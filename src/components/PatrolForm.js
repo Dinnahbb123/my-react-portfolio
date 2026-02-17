@@ -19,7 +19,10 @@ function PatrolForm() {
 
     const [clockedIn, setClockedIn] = useState(false);
 
-    
+    const [clockedOutTime, setClockedOutTime] = useState(null);
+
+    const [clockedOut, setClockedOut] = useState(false);
+
 
     const handleChange = (e) => {
         setForm({...form, [e.target.name]: e.target.value})
@@ -27,19 +30,28 @@ function PatrolForm() {
 
     
 
-    const handleSubmit = (e) => {
+    const handleClockIn = (e) => {
         e.preventDefault();
         setClockedIn(true);
-        setClockInTime(new Date());
-        
+        setClockInTime(new Date()); 
+          
     };
+
+
+     const handleClockOut = (e) => {
+        e.preventDefault();
+        setClockedOut(true);
+        setClockedOutTime(new Date());
+
+     };
+
 
     
 
     return (
         <div>
             <h1 style={{ padding: "20px" }}>Begin Patrol</h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-            <form onSubmit={handleSubmit}>
+            <form>
                     <div className="form-group">
                         <label>
                             Date:
@@ -80,13 +92,23 @@ function PatrolForm() {
                     </div>
                     
                     <div>
-                        <button type="submit">Clock In</button>
+                        <button type="button" onClick={handleClockIn}>Clock In</button>
+                    </div>
+
+                    <div>
+                        <button type="button" onClick={handleClockOut}>Clock Out</button>
                     </div>
             </form>
 
             {clockedIn && clockInTime && (
                 <p>You clocked in at {clockInTime.toLocaleTimeString()}</p>
             )}
+            
+
+            {clockedOut && clockedOutTime && (
+                <p>You clocked out at {clockedOutTime.toLocaleTimeString()}</p>
+            )}
+
         </div>
     )
 }
