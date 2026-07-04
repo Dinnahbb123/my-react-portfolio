@@ -28,86 +28,80 @@ function PatrolForm() {
         setForm({...form, [e.target.name]: e.target.value})
     }
 
-    
-
     const handleClockIn = (e) => {
         e.preventDefault();
         setClockedIn(true);
-        setClockInTime(new Date()); 
-          
+        setClockInTime(new Date());      
     };
-
 
      const handleClockOut = (e) => {
         e.preventDefault();
         setClockedOut(true);
         setClockedOutTime(new Date());
-
      };
 
 
-    
-
     return (
+
         <div>
-            <h1 style={{ padding: "20px" }}>Begin Patrol</h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-            <form>
-                    <div className="form-group">
-                        <label>
-                            Date:
-                            <input type="text" name="date" value={form.date} onChange={handleChange} />
-                            {/* <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} onSubmit={handleSubmit} /> */}
+                <h1 style={{ padding: "20px" }}>Begin Patrol </h1>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                <form>
+                        <div className="form-group">
+                            <label>
+                                Date:
+                                <input type="text" name="date" value={form.date} onChange={handleChange} />
+                                {/* <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} onSubmit={handleSubmit} /> */}
 
-                        </label>
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            Name:
-                            <input type="text" name="name" value={form.name} onChange={handleChange} />
-                        </label>
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            Location:
-                            <input type="text" name="location" value={form.location} onChange={handleChange} />
-                        </label>
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            Account:
-                            <input type="text" name="account" value={form.account} onChange={handleChange} />
-                        </label>
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            Shift:
-                            <input type="text" name="shift" value={form.shift} onChange={handleChange} />
-                        </label>
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            Post:
-                            <input type="text" name="post" value={form.post} onChange={handleChange} />
-                        </label>
-                    </div>
-                    
-                    <div>
-                        <button type="button" onClick={handleClockIn}>Clock In</button>
-                    </div>
+                            </label>
+                        </div>
+                        <div className="form-group">
+                            <label>
+                                Name:
+                                <input type="text" name="name" value={form.name} onChange={handleChange} />
+                            </label>
+                        </div>
+                        <div className="form-group">
+                            <label>
+                                Location:
+                                <input type="text" name="location" value={form.location} onChange={handleChange} />
+                            </label>
+                        </div>
+                        <div className="form-group">
+                            <label>
+                                Account:
+                                <input type="text" name="account" value={form.account} onChange={handleChange} />
+                            </label>
+                        </div>
+                        <div className="form-group">
+                            <label>
+                                Shift:
+                                <input type="text" name="shift" value={form.shift} onChange={handleChange} />
+                            </label>
+                        </div>
+                        <div className="form-group">
+                            <label>
+                                Post:
+                                <input type="text" name="post" value={form.post} onChange={handleChange} />
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <button type="button" onClick={handleClockIn}>Clock In</button>
+                        </div>
 
-                    <div>
-                        <button type="button" onClick={handleClockOut}>Clock Out</button>
-                    </div>
-            </form>
+                        <div>
+                            <button type="button" onClick={handleClockOut}>Clock Out</button>
+                        </div>
+                </form>
 
-            {clockedIn && clockInTime && (
-                <p>You clocked in at {clockInTime.toLocaleTimeString()}</p>
-            )}
-            
+                {clockedIn && clockInTime && (
+                    <p>You clocked in at {clockInTime.toLocaleTimeString()}</p>
+                )}
+                
 
-            {clockedOut && clockedOutTime && (
-                <p>You clocked out at {clockedOutTime.toLocaleTimeString()}</p>
-            )}
+                {clockedOut && clockedOutTime && (
+                    <p>You clocked out at {clockedOutTime.toLocaleTimeString()}</p>
+                )}
 
         </div>
     )

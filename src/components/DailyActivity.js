@@ -9,9 +9,8 @@ const handleSubmit = e => {
     e.preventDefault();
     console.log(form)
     alert("Thank you for your Submission")
-
-
 }
+
 
 const handleChange = (e) => {
     setForm(e.target.value)
@@ -19,16 +18,22 @@ const handleChange = (e) => {
 
 return(
     <form onSubmit={handleSubmit}>
+        
         <label>Daily Activity Report
+
             <textarea
                 value={form}
                 onChange={handleChange}
             />
+
         </label>
 
         <div>
+
             <button type="submit">Submit</button>
+
         </div>
+
     </form>
 )
 

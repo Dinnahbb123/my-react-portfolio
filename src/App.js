@@ -11,37 +11,34 @@ function App() {
 
   const navigate = useNavigate();
 
-  // const [currentForm, setCurrentForm] = useState(null);
-
-  
-
-
 return ( 
 
   
     <div className="app-background">
-      <h1 className="App-header">PostGuard Security Solutions</h1>
-    <button onClick={() =>
-      navigate('/patrol')}>Patrol Form</button>
-    <button onClick={() =>
-      navigate('/inspection')}>Inspection Form</button>
+              <h1 className="App-header">PostGuard Security Solutions</h1>
 
-    <button onClick={() =>
-      navigate('/dailyactivityreport')}>Daily Activity Report</button>
+            <button onClick={() =>
+              navigate('/patrol')}>Patrol Form</button>
 
-      <Routes>
+            <button onClick={() =>
+              navigate('/inspection')}>Inspection Form</button>
 
-        <Route path= "/patrol" element={<PatrolForm />} />
-          
-        <Route path= "/inspection" element={<InspectionForm />} />
+            <button onClick={() =>
+              navigate('/dailyactivityreport')}>Daily Activity Report</button>
 
-        <Route path="/dailyactivityreport" element={<DailyActivity />} />
+              <Routes>
 
-      </Routes>
+                  <Route path= "/patrol" element={<PatrolForm />} />
+                    
+                  <Route path= "/inspection" element={<InspectionForm />} />
 
-<footer className='App-footer'>2026 PostGuard Solutions</footer>
-      
-</div>
+                  <Route path="/dailyactivityreport" element={<DailyActivity />} />
+
+              </Routes>
+
+        <footer className='App-footer'>2026 PostGuard Solutions</footer>
+              
+    </div>
       
 
 )
